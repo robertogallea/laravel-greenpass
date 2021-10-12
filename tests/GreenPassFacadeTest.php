@@ -1,9 +1,8 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests;
 
 use robertogallea\LaravelGrenPass\Facades\GreenPass;
-use Tests\TestCase;
 
 class GreenPassFacadeTest extends TestCase
 {

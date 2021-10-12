@@ -1,9 +1,8 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests;
 
 use Illuminate\Http\UploadedFile;
-use Tests\TestCase;
 
 class ValidationTest extends TestCase
 {

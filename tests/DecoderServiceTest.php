@@ -1,13 +1,12 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests;
 
 use Masterix21\GreenPass\Exceptions\InvalidQrcode;
-use Masterix21\GreenPass\GreenPass;
 use robertogallea\LaravelGrenPass\Exceptions\InvalidGreenPassCode;
 use robertogallea\LaravelGrenPass\Services\GreenPassDecoder;
 
-class DecoderServiceTest extends \Tests\TestCase
+class DecoderServiceTest extends TestCase
 {
 
     /** @test */
