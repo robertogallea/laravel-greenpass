@@ -11,7 +11,7 @@
 [![Packagist Downloads][ico-downloads]][link-downloads]
 
 laravel-greenpass is a package for the management of the European <code>Green Pass</code> (i.e. covid certification).
-The package allows easy validation and decodign of the GreenPass. It is also suited for Laravel since it provides a
+The package allows easy validation and decoding of the GreenPass. It is also suited for Laravel since it provides a
 convenient custom validator for request validation.
 
 - [Installation](#installation)
