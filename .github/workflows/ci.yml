@@ -9,10 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run composer
-        uses: ErickGomez98/composer@master
-        with:
-          action: 'install'
+      - name: composer-php-gd-zip
+        uses: ErickGomez98/composer@v0.0.2
+
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v2
