@@ -14,7 +14,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-          extensions: imagick, gd-php/php-src@PHP-8.0, zlib, zxing
+          extensions: imagick, gd-php/php-src@PHP-8.0, zlib, mbstring, zxing
         env:
           GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg
           GD_LIBS: libgd-dev libjpeg-dev
