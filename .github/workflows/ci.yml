@@ -14,7 +14,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-          extensions: imagick, gd, zlib, zxing
+          extensions: imagick, gd-php/php-src@PHP-8.0, zlib, zxing
 
 
       - uses: php-actions/composer@v5
