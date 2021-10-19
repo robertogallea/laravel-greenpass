@@ -15,6 +15,10 @@ jobs:
         with:
           php-version: '8.0'
           extensions: imagick, gd-php/php-src@PHP-8.0, zlib, zxing
+        env:
+          GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg
+          GD_LIBS: libgd-dev libjpeg-dev
+          GD_PATH: ext/gd
 
 
       - uses: php-actions/composer@v5
