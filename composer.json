@@ -34,7 +34,7 @@
     }
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "./vendor/bin/phpunit --coverage-text"
   },
   "extra": {
     "laravel": {

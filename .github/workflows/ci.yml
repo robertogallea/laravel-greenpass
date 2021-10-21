@@ -5,25 +5,38 @@ on: [push]
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        php: [ '8.0' ]
     steps:
-
       - uses: actions/checkout@v2
-
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
-          extensions: imagick, gd, zlib, zxing
-
-
-      - uses: php-actions/composer@v5
-
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v2
+          php-version: ${{ matrix.php }}
+          tools: composer
+          extensions: imagick, gd-php/php-src@PHP-${{ matrix.php }}, zlib, mbstring
         env:
-          TEST_NAME: GitHubActions
+          GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg
+          GD_LIBS: libgd-dev libjpeg-dev
+          GD_PATH: ext/gd
+
+      - name: Show PHP version
+        run: php -v && composer -V
+      - name: Download Composer cache dependencies from cache
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache Composer dependencies
+        uses: actions/cache@v1
         with:
-          bootstrap: vendor/autoload.php
-          configuration: phpunit.xml
-          args: --coverage-text
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ matrix.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ matrix.os }}-composer-
+      - name: Install dependencies
+        run: |
+          composer install --no-interaction
+      - name: Run tests
+        run: |
+          composer test
+
