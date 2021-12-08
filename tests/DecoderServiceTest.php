@@ -3,8 +3,8 @@
 namespace Tests;
 
 use Masterix21\GreenPass\Exceptions\InvalidQrcode;
-use robertogallea\LaravelGrenPass\Exceptions\InvalidGreenPassCode;
-use robertogallea\LaravelGrenPass\Services\GreenPassDecoder;
+use robertogallea\LaravelGreenPass\Exceptions\InvalidGreenPassCode;
+use robertogallea\LaravelGreenPass\Services\GreenPassDecoder;
 
 class DecoderServiceTest extends TestCase
 {

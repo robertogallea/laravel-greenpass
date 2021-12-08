@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use robertogallea\LaravelGrenPass\GreenPassServiceProvider;
+use robertogallea\LaravelGreenPass\GreenPassServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

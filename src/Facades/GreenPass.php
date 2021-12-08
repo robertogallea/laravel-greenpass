@@ -1,6 +1,6 @@
 <?php
 
-namespace robertogallea\LaravelGrenPass\Facades;
+namespace robertogallea\LaravelGreenPass\Facades;
 
 class GreenPass extends \Illuminate\Support\Facades\Facade
 {
