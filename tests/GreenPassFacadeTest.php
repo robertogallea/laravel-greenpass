@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use robertogallea\LaravelGrenPass\Facades\GreenPass;
+use robertogallea\LaravelGreenPass\Facades\GreenPass;
 
 class GreenPassFacadeTest extends TestCase
 {

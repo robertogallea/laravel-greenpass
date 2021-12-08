@@ -1,12 +1,12 @@
 <?php
 
-namespace robertogallea\LaravelGrenPass\Services;
+namespace robertogallea\LaravelGreenPass\Services;
 
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
 use Libern\QRCodeReader\QRCodeReader;
 use Masterix21\GreenPass\Services\Decoder;
-use robertogallea\LaravelGrenPass\Exceptions\InvalidGreenPassCode;
+use robertogallea\LaravelGreenPass\Exceptions\InvalidGreenPassCode;
 
 class GreenPassDecoder
 {

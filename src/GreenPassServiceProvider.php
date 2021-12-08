@@ -1,11 +1,11 @@
 <?php
 
-namespace robertogallea\LaravelGrenPass;
+namespace robertogallea\LaravelGreenPass;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Masterix21\GreenPass\Exceptions\InvalidQrcode;
-use robertogallea\LaravelGrenPass\Services\GreenPassDecoder;
+use robertogallea\LaravelGreenPass\Services\GreenPassDecoder;
 
 class GreenPassServiceProvider extends ServiceProvider
 {
