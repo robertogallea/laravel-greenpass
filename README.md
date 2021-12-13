@@ -15,6 +15,7 @@ The package allows easy validation and decoding of the GreenPass. It is also sui
 convenient custom validator for request validation.
 
 - [Installation](#installation)
+- [Configuration](#configuration)
 - [Validation](#validation)
 - [Utility GreenPassDecoder class](#utility-greenpassdecoder-class)
 
@@ -46,6 +47,18 @@ In `bootstrap/app.php`, register the Service Provider
 ```php
 $app->register(robertogallea\LaravelGreenPass\GreenPassServiceProvider::class);
 ```
+
+## Configuration
+
+By default, the underlying validation package saves the validation certificates inside 
+`storage/app/public/green_pass_cache`. 
+If you want to change this folder, publish the config file with the command
+```
+php artisan vendor:publish --provider="robertogallea\LaravelGreenPass\GreenPassServiceProvider" --tag="config"
+```
+and edit the `certificate-storage-path` key inside the `config/green-pass.php` file.
+
+**Make sure the chosen folder has write access!**
 
 ## Validation
 

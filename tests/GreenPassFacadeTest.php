@@ -9,13 +9,11 @@ class GreenPassFacadeTest extends TestCase
     /** @test */
     public function it_can_use_facade()
     {
-        foreach ($this->greenPasses as $types) {
-            foreach ($types as $greenPass) {
-                $greenPass = \GreenPass::decode($greenPass);
 
-                $this->assertNotEmpty($greenPass->holder->surname);
-            }
-        }
+        $greenPass = \GreenPass::decode($this->qrcode_certificate_valid_but_revoked);
+
+        $this->assertNotEmpty($greenPass->person);
+
     }
 
     protected function getPackageAliases($app)

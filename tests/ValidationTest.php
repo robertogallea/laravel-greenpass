@@ -9,20 +9,18 @@ class ValidationTest extends TestCase
     /** @test */
     public function valid_green_passes_pass_validation()
     {
-        foreach ($this->greenPasses as $types) {
-            foreach ($types as $greenPass) {
-                $rules = [
-                    'green_pass_field' => 'greenpass',
-                ];
+        $greenPass = $this->qrcode_certificate_valid_but_revoked;
+        $rules = [
+            'green_pass_field' => 'greenpass',
+        ];
 
-                $data = [
-                    'green_pass_field' => $greenPass,
-                ];
+        $data = [
+            'green_pass_field' => $greenPass,
+        ];
 
-                $validator = $this->app['validator']->make($data, $rules);
-                $this->assertEquals(true, $validator->passes());
-            }
-        }
+        $validator = $this->app['validator']->make($data, $rules);
+        $this->assertEquals(true, $validator->passes());
+
     }
 
     /** @test */

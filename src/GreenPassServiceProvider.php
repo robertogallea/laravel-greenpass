@@ -2,9 +2,11 @@
 
 namespace robertogallea\LaravelGreenPass;
 
+use Herald\GreenPass\Utils\FileUtils;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Masterix21\GreenPass\Exceptions\InvalidQrcode;
+use robertogallea\LaravelGreenPass\Exceptions\InvalidGreenPassException;
 use robertogallea\LaravelGreenPass\Services\GreenPassDecoder;
 
 class GreenPassServiceProvider extends ServiceProvider
@@ -17,6 +19,14 @@ class GreenPassServiceProvider extends ServiceProvider
                 return new GreenPassDecoder();
             }
         );
+
+        $this->mergeConfigFrom($this->getPackagePath() . '/config/green-pass.php', 'green-pass');
+
+        $this->publishes([
+            $this->getPackagePath() . '/config/green-pass.php' => config_path('green-pass.php')
+        ], 'config');
+
+        FileUtils::overrideCacheFilePath(config('green-pass.certificate-storage-path'));
     }
 
     public function boot(GreenPassDecoder $decoder)
@@ -34,7 +44,7 @@ class GreenPassServiceProvider extends ServiceProvider
         Validator::extend('greenpass', function ($attribute, $value, $parameters, $validator) use ($decoder) {
             try {
                 $decoder->decode($value);
-            } catch (InvalidQrcode $exception) {
+            } catch (InvalidGreenPassException $exception) {
 
                 $error_msg = str_replace([':attribute'], [$attribute], trans('validation.greenpass.invalid-code'));
 
