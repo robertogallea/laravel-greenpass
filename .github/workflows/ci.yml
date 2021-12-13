@@ -16,7 +16,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           tools: composer
-          extensions: imagick, gd-php/php-src@PHP-${{ matrix.php }}, zlib, mbstring
+          extensions: imagick, gd-php/php-src@PHP-${{ matrix.php }}, zlib, mbstring, bcmath
         env:
           GD_CONFIGURE_OPTS: --enable-gd=shared,/usr --with-external-gd --with-jpeg
           GD_LIBS: libgd-dev libjpeg-dev
