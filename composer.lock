@@ -1063,16 +1063,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.75.0",
+            "version": "v8.76.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0bb91d3176357da232da69762a64b0e0a0988637"
+                "reference": "83fe447ae964dc5f1f829d25fa2f6042d9099834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0bb91d3176357da232da69762a64b0e0a0988637",
-                "reference": "0bb91d3176357da232da69762a64b0e0a0988637",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/83fe447ae964dc5f1f829d25fa2f6042d9099834",
+                "reference": "83fe447ae964dc5f1f829d25fa2f6042d9099834",
                 "shasum": ""
             },
             "require": {
@@ -1231,7 +1231,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-07T14:55:46+00:00"
+            "time": "2021-12-14T16:21:19+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -2741,12 +2741,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/herald-si/cbor-php.git",
-                "reference": "68e25bcbc985a04c028e1aadd945356a6f383b9f"
+                "reference": "56f7bf0d4ab8c9aace15d9965a4540df86d57a2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/herald-si/cbor-php/zipball/68e25bcbc985a04c028e1aadd945356a6f383b9f",
-                "reference": "68e25bcbc985a04c028e1aadd945356a6f383b9f",
+                "url": "https://api.github.com/repos/herald-si/cbor-php/zipball/56f7bf0d4ab8c9aace15d9965a4540df86d57a2c",
+                "reference": "56f7bf0d4ab8c9aace15d9965a4540df86d57a2c",
                 "shasum": ""
             },
             "require": {
@@ -2767,8 +2767,7 @@
                 "phpunit/phpunit": "^9.5",
                 "rector/rector": "^0.12",
                 "roave/security-advisories": "dev-latest",
-                "symfony/var-dumper": "^5.3",
-                "symplify/easy-coding-standard": "^9.4"
+                "symplify/easy-coding-standard": "^10.0"
             },
             "suggest": {
                 "ext-bcmath": "GMP or BCMath extensions will drastically improve the library performance. BCMath extension needed to handle the Big Float and Decimal Fraction Tags",
@@ -2817,7 +2816,7 @@
                     "url": "https://www.patreon.com/FlorentMorselli"
                 }
             ],
-            "time": "2021-11-17T12:47:21+00:00"
+            "time": "2021-12-13T13:41:11+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
