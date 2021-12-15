@@ -24,6 +24,23 @@ class ValidationTest extends TestCase
     }
 
     /** @test */
+    public function revoked_green_passes_dont_pass_validation_if_validation_is_strict()
+    {
+        $greenPass = $this->qrcode_certificate_valid_but_revoked;
+        $rules = [
+            'green_pass_field' => 'greenpass:valid',
+        ];
+
+        $data = [
+            'green_pass_field' => $greenPass,
+        ];
+
+        $validator = $this->app['validator']->make($data, $rules);
+        $this->assertEquals(false, $validator->passes());
+
+    }
+
+    /** @test */
     public function invalid_green_pass_does_not_pass_validation()
     {
         $rules = [
@@ -53,5 +70,22 @@ class ValidationTest extends TestCase
 
         $validator = $this->app['validator']->make($data, $rules);
         $this->assertEquals(true, $validator->passes());
+    }
+
+    /** @test */
+    public function revoked_green_passes_qr_codes_dont_pass_validation_if_validation_is_strict()
+    {
+        $greenPassFile = new UploadedFile('./tests/codes/example_qr.png', 'example_qr.png');
+
+        $rules = [
+            'green_pass_file_field' => 'greenpass_file:valid',
+        ];
+
+        $data = [
+            'green_pass_file_field' => $greenPassFile,
+        ];
+
+        $validator = $this->app['validator']->make($data, $rules);
+        $this->assertEquals(false, $validator->passes());
     }
 }

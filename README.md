@@ -62,7 +62,7 @@ and edit the `certificate-storage-path` key inside the `config/green-pass.php` f
 
 ## Validation
 
-To validate a green pass, use the `greenpass` and  `greenpass_file` keyword in your validation rules array
+To validate the **formal** correctness of a green pass, use the `greenpass` and  `greenpass_file` keyword in your validation rules array. Please note that in this way you don't check that the green pass is actually valid (i.e. not expired or revoked).
 
 ```php
     public function rules()
@@ -80,6 +80,29 @@ To validate a green pass, use the `greenpass` and  `greenpass_file` keyword in y
     {
         return [
             'greenpass_uploaded_file' => 'greenpass_file',
+            
+            //...
+        ];
+    }
+```
+To perform **strict** validation (i.e. check actual validity) you can add the `valid` parameter to the validator rule:
+
+```php
+    public function rules()
+    {
+        return [
+            'greenpass_string' => 'greenpass:active',
+            
+            //...
+        ];
+    }
+```
+
+```php
+    public function rules()
+    {
+        return [
+            'greenpass_uploaded_file' => 'greenpass_file:active',
             
             //...
         ];
