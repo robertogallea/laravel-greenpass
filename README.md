@@ -85,7 +85,7 @@ To validate the **formal** correctness of a green pass, use the `greenpass` and 
         ];
     }
 ```
-To perform **strict** validation (i.e. check actual validity) you can add the `valid` parameter to the validator rule:
+To perform **strict** validation (i.e. check actual validity) you can add the `active` parameter to the validator rule:
 
 ```php
     public function rules()
